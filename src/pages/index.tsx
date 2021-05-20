@@ -57,14 +57,16 @@ const Home = () => (
           people who want to support, promote or build with Shiba.
         </p>
         <p>
-          Look for more info in this space soon. In the meantime, check out
+          Look for more info in this space soon. In the meantime, check out this
+          {' '}
           <a
             href="https://github.com/openshiba/projects"
             target="_blank"
             rel="noreferrer"
           >
-            this page
+            Github page
           </a>
+          {' '}
           for more info on how to get involed.
         </p>
       </section>

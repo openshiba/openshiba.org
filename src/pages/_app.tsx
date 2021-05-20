@@ -1,36 +1,46 @@
 // Modules
+import { useEffect } from 'react';
+import * as Fathom from 'fathom-client';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 // Context
 import { AppContext } from '../../global/context/app.js';
 
 // Style
 import 'normalize.css';
-import { colors } from '../../global/config/style/index.js';
 
 interface Props {
   Component: any,
   pageProps: unknown,
 }
 
-const App = ({ Component, pageProps } : Props): unknown => (
-  <AppContext>
-    <Head>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta
-        name="viewport"
-        // eslint-disable-next-line max-len
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-      />
-      <meta name="description" content="Description" />
-      <meta name="keywords" content="Keywords" />
-      <title>Open Shiba Foundation</title>
+const App = ({ Component, pageProps }: Props): unknown => {
+  const router = useRouter();
 
-      <meta name="theme-color" content={colors.primary} />
-    </Head>
-    <Component {...pageProps} />
-  </AppContext>
-);
+  useEffect(() => {
+    // Initialize Fathom when the app loads
+    Fathom.load('NSSQMDBT', {
+      includedDomains: ['openshiba.org'],
+    });
+
+    function onRouteChangeComplete() : void {
+      Fathom.trackPageview();
+    }
+    // Record a pageview when route changes
+    router.events.on('routeChangeComplete', onRouteChangeComplete);
+
+    // Unassign event listener
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete);
+    };
+  }, [router.events]);
+
+  return (
+    <AppContext>
+      <Component {...pageProps} />
+    </AppContext>
+  );
+};
 
 export default App;
