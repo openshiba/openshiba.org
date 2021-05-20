@@ -608,8 +608,4 @@ export default css`
       font-size: 100%;
     }
   }
-
-  #___gatsby, #gatsby-focus-wrapper {
-    height: 100%;
-  }
 `;

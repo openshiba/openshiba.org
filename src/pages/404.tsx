@@ -1,5 +1,6 @@
 import Layout from '../layouts/main';
 
+// eslint-disable-next-line
 const NotFoundPage = () => (
   <Layout>
     <h1>So Loss! Much Sad!</h1>

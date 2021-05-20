@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
-const IndexPage = () : unknown => (
+// eslint-disable-next-line
+const IndexPage = () => (
   <nav
     css={css`
       li {

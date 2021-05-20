@@ -5,9 +5,9 @@ import { NextSeo } from 'next-seo';
 import global from '../components/style/global';
 
 interface Props {
-  children: any,
-  description: string,
-  title: string
+  children?: any,
+  description?: string,
+  title?: string
 }
 
 // eslint-disable-next-line
