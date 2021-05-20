@@ -1,0 +1,64 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    // "lib": [
+    //   "dom",
+    //   "dom.iterable",
+    //   "esnext"
+    // ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/style/typography.jsx",
+    "src/components/style/utility.jsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "baseUrl": "./",
+  "paths": {
+    "@components/*": [
+      "src/components/*"
+    ],
+    "@config/*": [
+      "global/config/*"
+    ],
+    "@global/*": [
+      "global/*"
+    ],
+    "@helpers/*": [
+      "src/helpers/*"
+    ],
+    "@hooks/*": [
+      "src/hooks/*"
+    ],
+    "@layouts/*": [
+      "src/layouts/*"
+    ],
+    "@pages/*": [
+      "src/pages/*"
+    ],
+    "@static/*": [
+      "src/static/*"
+    ]
+  }
+}
