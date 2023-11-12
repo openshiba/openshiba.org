@@ -14,7 +14,7 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^0.8.0",
     "@types/react": "^17.0.6",
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "deta": "^0.0.9",
     "fathom-client": "^3.0.0",
     "next": "latest",
